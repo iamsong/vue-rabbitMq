@@ -22,12 +22,16 @@
         </div>
         </el-button>
       </el-col>
+      <button type="button" name="button" @click="ratesfr()" id="ceshi" style="display:none">ceshi</button>
     </el-row>
     </el-tab-pane>
   </el-tabs>
 </template>
 
 <script>
+
+
+
 
 export default {
   data() {
@@ -41,7 +45,12 @@ export default {
   mounted: function() {
     this.$nextTick(function() {
     // setInterval( this.ratesfr(), 5000)
-    this.ratesfr()
+    setInterval(function() {
+      document.getElementById("ceshi").click();
+    }, 5000)
+    // this.ratesfr()
+    //
+    // this.con()
     })
   },
   methods: {
@@ -53,14 +62,7 @@ export default {
             this.pd = this.rdata.publish_details
             this.dd = this.rdata.deliver_get_details
           })
-      // setTimeout(this.ratesfr(), 5000)
-    },
-    cc() {
-      console.log("aa")
-    },
-    con() {
-      setInterval( cc(), 10000 )
-      // setTimeout(this.con(),10000000 )
+      //setTimeout('ratesfr()', 5000)
     }
   }
 };

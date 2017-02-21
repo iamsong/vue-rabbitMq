@@ -34,7 +34,7 @@ export default {
     height: 43px;
     line-height: 43px;
     padding-left: 15px;
-    background-color: #ff9900;
+    background-color: #99A9BF;
     color: #F9FAFC;
     cursor: pointer;
     border-bottom: 1px solid rgb(223, 230, 236);
@@ -43,9 +43,9 @@ export default {
 }
 #app .el-collapse{
     text-align: left;
-    border: 1px solid #ff9900;
+    border: 1px solid #99A9BF;
 }
-#app .el-menu--dark{
+/*#app .el-menu--dark{
   background-color: #ff9900;
 
 }
@@ -57,5 +57,5 @@ export default {
 }
 #app .el-menu--dark .el-menu-item:hover{
   background-color: #ff9900;
-}
+}*/
 </style>

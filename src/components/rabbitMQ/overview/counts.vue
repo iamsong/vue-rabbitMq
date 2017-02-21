@@ -7,6 +7,7 @@
       <el-button class="aa" id="c3">交换器：{{data.exchanges}} 个</el-button>
       <el-button class="aa" id="c4">队列：{{data.queues}} 个</el-button>
       <el-button class="aa" id="c5">用户：{{data.consumers}} 个</el-button>
+      <button type="button" name="button" id="counts" @click="countsre()" style="display:none"></button>
    </el-row>
  </el-tab-pane>
 </el-tabs>
@@ -30,16 +31,19 @@ export default {
   },
   mounted: function() {
     this.$nextTick(function() {
-        this.axios.get('/api/overview')
-            .then((response) => {
-              this.countsdata = response.data
-              this.data = this.countsdata.object_totals
-            })
-
+      setInterval(function() {
+        document.getElementById("counts").click();
+      }, 5000)
     })
   },
   methods: {
-
+    countsre() {
+      this.axios.get('/api/overview')
+          .then((response) => {
+            this.countsdata = response.data
+            this.data = this.countsdata.object_totals
+          })
+    }
   }
 };
 

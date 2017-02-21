@@ -53,7 +53,7 @@ export default {
   margin-bottom: 25px;
 }
 .el-table .info-row {
-  background: #ccffcc;
+  background:  #c9e5f5;
 }
 
 </style>

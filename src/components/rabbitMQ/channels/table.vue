@@ -26,6 +26,7 @@
       <el-table-column prop="message_stats.deliver_no_ack" label="应答" width="100"></el-table-column>
     </el-table-column>
   </el-table>
+  <button type="button" name="button" id="tableid" @click="channelsrefresh()" style="display:none"></button>
 <el-row>
 </template>
 
@@ -38,7 +39,9 @@ export default {
   },
   mounted: function() {
     this.$nextTick(function() {
-      setTimeout(this.channelsrefresh(), 3000)
+      setInterval(function() {
+        document.getElementById("tableid").click();
+      }, 5000)
     })
   },
   methods: {
