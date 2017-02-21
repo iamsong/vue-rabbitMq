@@ -8,8 +8,8 @@ import exchanges from '../components/rabbitMQ/exchanges'
 import queues from '../components/rabbitMQ/queues'
 
 import chart from '../test/chart/chart.vue'
-import example1 from '../views/example1'
-import test from '../components/rabbitMQ/overview/total/rates'
+import example from '../views/example'
+import test from '../components/rabbitMQ/overview/node'
 
 Vue.use(Router)
 
@@ -47,9 +47,9 @@ export default new Router({
       component: queues
     },
     {
-      path: '/example1',
-      name: 'example1',
-      component: example1
+      path: '/example',
+      name: 'example',
+      component: example
     },
     {
       path: '/test',

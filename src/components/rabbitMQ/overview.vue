@@ -9,19 +9,20 @@
       <counts></counts>
     </el-collapse-item>
     <!--Nodes-->
-    <el-collapse-item title="节点" name="3">
+    <el-collapse-item title="节点" name="2">
       <node></node>
     </el-collapse-item>
     <!--Ports-->
-    <el-collapse-item title="端口与环境" name="4">
+    <el-collapse-item title="端口与环境" name="3">
       <listening></listening>
       <p></p>
       <web></web>
     </el-collapse-item>
     <!--import/export-->
-    <el-collapse-item title="输入/输出" name="5">
-
-    </el-collapse-item>
+    <!-- <el-collapse-item title="输入/输出" name="4">
+      <p></p>
+      <el-tag>标签</el-tag>
+    </el-collapse-item> -->
   </el-collapse>
 </el-row>
 </template>
@@ -37,7 +38,7 @@ import web from "./overview/Ports/web";
 export default {
   data() {
     return {
-      activeNames: ['1','2','3','4','5']
+      activeNames: ['1','2','3','4']
     };
   },
   computed: {},
@@ -58,7 +59,9 @@ export default {
 </script>
 
 <style lang="css" scoped>
-#collapse {
+/*#collapse {
   text-align: left;
-}
+  font-size: 30px;
+}*/
+
 </style>

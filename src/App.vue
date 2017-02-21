@@ -30,4 +30,32 @@ export default {
   width: 90%;
   margin-left: 5%;
 }
+#app .el-collapse-item__header{
+    height: 43px;
+    line-height: 43px;
+    padding-left: 15px;
+    background-color: #ff9900;
+    color: #F9FAFC;
+    cursor: pointer;
+    border-bottom: 1px solid rgb(223, 230, 236);
+    font-weight: bold;
+    font-style: 25px;
+}
+#app .el-collapse{
+    text-align: left;
+    border: 1px solid #ff9900;
+}
+#app .el-menu--dark{
+  background-color: #ff9900;
+
+}
+#app .el-menu--dark .el-menu-item {
+  color: #fff;
+}
+#app .el-menu--horizontal.el-menu--dark .el-menu-item.is-active{
+  color: #000;
+}
+#app .el-menu--dark .el-menu-item:hover{
+  background-color: #ff9900;
+}
 </style>

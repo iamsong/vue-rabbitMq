@@ -35,8 +35,15 @@ module.exports = {
         '^/data': '/data'
       }
     },
+    '/service': {
+    target: 'http://ip.taobao.com',
+    changeOrigin: true,
+    pathRewrite: {
+      '^/service': '/service'
+    }
+  },
     '/api': {
-    target: 'http://192.168.3.133:15672',
+    target: 'http://admin:root@219.216.103.200:57233',
     changeOrigin: true,
     pathRewrite: {
       '^/api': '/api'

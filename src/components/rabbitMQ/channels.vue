@@ -6,10 +6,7 @@
         <p>搜索:</p>
       </el-col>
       <el-col :span="3">
-        <el-input icon="search" v-model="input1" :on-icon-click="handleIconClick"></el-input>
-      </el-col>
-      <el-col :span="4" :push="10">
-        <p id="showing_c">27 项(最多 100 项)</p>
+        <el-input icon="search"></el-input>
       </el-col>
     </el-row>
     <channels></channels>
@@ -21,12 +18,22 @@ import channels from "./channels/table"
 export default {
   data() {
     return {
+      input1: ''
     };
   },
-  computed: {},
-  ready() {},
-  attached() {},
-  methods: {},
+  mounted: function() {
+    this.$nextTick(function() {
+      setTimeout(this.noderefresh(), 3000)
+    })
+  },
+  methods: {
+    noderefresh() {
+      this.axios.get('/api/nodes')
+          .then((response) => {
+            this.nodedata = response.data
+          })
+    }
+  },
   components: {
     channels
   }

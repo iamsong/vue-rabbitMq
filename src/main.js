@@ -9,11 +9,10 @@ import VueAxios from 'vue-axios'
 import '../theme/index.css'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
-
 // Vue.prototype.$http = axios;
 Vue.use(VueAxios, axios)
 /* eslint-disable no-new */
-// Vue.use(resource)
+Vue.use(resource)
 Vue.use(ElementUI)
 new Vue({
   el: '#app',

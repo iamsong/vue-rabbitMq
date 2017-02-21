@@ -4,28 +4,28 @@
   <el-row :gutter="20">
     <!--准备消息-->
     <el-col :span="3">
-      <el-button class="queued_button" type="primary">
+      <el-button class="queued_button" id="q1">
       <div class="block">
         <span class="demonstration">准备消息</span>
-        <h1>36</h1>
+        <h1>{{qdata.messages_ready}}</h1>
       </div>
       </el-button>
     </el-col>
     <!--未应答状态的消息-->
     <el-col :span="3">
-      <el-button class="queued_button" type="primary">
+      <el-button class="queued_button" id="q2">
       <div class="block">
         <span class="demonstration">未应答状态的消息</span>
-        <h1>136</h1>
+        <h1>{{qdata.messages_unacknowledged}}</h1>
       </div>
       </el-button>
     </el-col>
     <!--总共-->
     <el-col :span="3">
-      <el-button class="queued_button" type="primary">
+      <el-button class="queued_button" id="q3">
       <div class="block">
         <span class="demonstration">总共</span>
-        <h1>56</h1>
+        <h1>{{qdata.messages}}</h1>
       </div>
       </el-button>
     </el-col>
@@ -38,13 +38,19 @@
 export default {
   data() {
     return {
+      qdata:[],
+      queuedata: []
     };
   },
-  computed: {},
-  ready() {},
-  attached() {},
-  methods: {},
-  components: {}
+  mounted: function() {
+    this.$nextTick(function() {
+        this.axios.get('/api/overview')
+            .then((response) => {
+              this.queuedata = response.data
+              this.qdata = this.queuedata.queue_totals
+            })
+    })
+  }
 };
 </script>
 
@@ -56,5 +62,8 @@ export default {
 #queued_card {
   margin-top: 25px;
   margin-bottom: 20px;
+}
+#q1,#q2,#q3 {
+  background: #ccffcc;
 }
 </style>
